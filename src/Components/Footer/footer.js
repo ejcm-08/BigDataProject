@@ -1,7 +1,6 @@
 import './footer.css';
 import React from 'react';
 
-
 function Footer() {
     return (
         <div className="footer">
@@ -10,7 +9,12 @@ function Footer() {
                 <div className="footer-links">
                     <a href="#privacy">Privacy Policy</a>
                     <a href="#terms">Terms of Service</a>
-                    <a href="#contact">Contact Us</a>
+                </div>
+                <div className="contact-form">
+                    <h3>Contact Us</h3>
+                    <form>
+                        
+                    </form>
                 </div>
             </div>
         </div>

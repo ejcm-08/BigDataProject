@@ -1,26 +1,28 @@
 .navbar {
-    position: absolute; /* Make the navbar rest on top of the hero section */
+    display: block;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.25); /* Black background with 25% opacity */
-    z-index: 10; /* Ensure the navbar stays above other elements */
+    height: 77px;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 10; 
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
   }
 
   .navbar a {
-    color: #fff; /* White text for links */
+    color: #fff; 
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
   }
 
   .navbar a:hover {
-    text-decoration: underline; /* Optional: Add underline on hover */
+    text-decoration: none;
   }
   
   .navbar-logo {
@@ -29,8 +31,11 @@
   }
   
   .navbar-company {
-    font-weight: bold;
-    font-size: 1.2rem;
+    margin-left: 2rem;
+    font-family: "Jomhuria", sans-serif;
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: var(--font-size-company);
     color: white;
     margin-right: auto;
   }
@@ -49,11 +54,11 @@
   
   .navbar-item a {
     text-decoration: none;
-    color: white;
-    background-color: #090a16;
+    color: white;   
     padding: 0.5rem 1rem;
+    margin: 0 5px;
     border-radius: 10px;
-    font-size: 0.9rem;
+    font-size: 16px;
     transition: background-color 0.3s ease;
   }
   

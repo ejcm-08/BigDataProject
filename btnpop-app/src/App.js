@@ -1,30 +1,30 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import NewsPage from './pages/NewsPage';
+import EventsPage from './pages/EventsPage';
+import DonatePage from './pages/DonatePage';
 import Navbar from './Components/Navbar/navbar';
 import Footer from './Components/Footer/footer';
-import heroImage from './Content/Images/rari.jpg';
 import './App.css';
 
 function App() {
   return (
-    <div className="container">
-            <Navbar />
-      <div className="hero-section">
-        <div className="hero-content">
-          <h1>MUSIC ✕ VIDEO FEST</h1>
-          <p>
-            BTN POP is a music and video event which brings together talents in the province of Bataan in a multi-media affair.
-          </p>
-          <p>
-            SONGS submitted by local songwriters interpreted by upcoming home-grown artists, featured in a MUSIC VIDEO directed by local filmmakers, will all lead up to an exciting LIVE EVENT!
-          </p>
-        </div>
-        <div className="hero-image">
-          <img src={heroImage} alt="Hero" />
-        </div>
+    <Router>
+      <div className='app'>
+        <Navbar />
+        <main className="grid-container">
+          <Routes>
+            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/events" element={<EventsPage />} />
+            <Route path="/donate" element={<DonatePage />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
-
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

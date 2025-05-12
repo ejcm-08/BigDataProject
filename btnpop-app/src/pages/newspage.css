@@ -1,6 +1,6 @@
 .news-container {
-  padding: 80px 20px 20px;
-  max-width: 1200px;
+  padding: 120px 40px 80px;
+  max-width: var(--site-max-width);
   margin: 0 auto;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .highlight-content {
-  padding: 20px;
+  padding: 40px;
 }
 
 .highlight-content h3 {

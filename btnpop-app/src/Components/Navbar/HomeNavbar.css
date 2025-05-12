@@ -6,27 +6,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 20px;
+  padding: 1rem 40px;
   z-index: 1000;
   transition: all 0.3s ease;
   background-color: transparent;
 }
 
 .home-navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(9, 10, 22, 1);
   backdrop-filter: blur(10px);
 }
 
 .home-navbar .navbar-company a{
   font-family: "Jomhuria", sans-serif;
-  font-size: 2rem;
+  font-size: var(--font-size-company);
+  letter-spacing: 1px;
   color: #fff;
   text-decoration: none;
+  padding: 0 40px;
 }
 
 .home-navbar .navbar-list {
   display: flex;
-  gap: 1rem;
+  padding: 1rem 0;
   list-style: none;
 }
 
@@ -36,6 +38,7 @@
   font-size: 1rem;
   font-weight: 500;
   transition: color 0.3s ease;
+  padding: 0 40px;
 }
 
 .home-navbar .navbar-item a:hover {

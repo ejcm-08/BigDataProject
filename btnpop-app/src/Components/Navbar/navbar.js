@@ -11,7 +11,7 @@ function Navbar() {
                     <li className="navbar-item"><Link to="/">HOME</Link></li>
                     <li className="navbar-item"><Link to="/news">NEWS</Link></li>
                     <li className="navbar-item"><Link to="/events">EVENTS</Link></li>
-                    <li className="navbar-item"><Link to="/donate">ABOUT</Link></li>
+                    <li className="navbar-item"><Link to="/about">ABOUT</Link></li>
                 </ul>
             </div>
         </nav>

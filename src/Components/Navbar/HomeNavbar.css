@@ -1,0 +1,43 @@
+.home-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 20px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.home-navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.home-navbar .navbar-company a{
+  font-family: "Jomhuria", sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.home-navbar .navbar-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.home-navbar .navbar-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.home-navbar .navbar-item a:hover {
+  color: #000;
+}

@@ -1,0 +1,20 @@
+{
+  "news": [
+    {
+      "id": "1",
+      "title": "Breaking News",
+      "content": "This is the content of the breaking news.",
+      "author": "John Doe",
+      "image": "https://www.reuters.com/investigates/special-report/assets/section-leads/wider-image/spain-environment-wildhorses/Wildhorses_32.jpg?v=374817280425",
+      "date": "2023-10-01"
+    },
+    {
+      "id": "2",
+      "title": "Latest Updates",
+      "content": "This is the content of the latest updates.",
+      "author": "Jane Smith",
+      "image": "https://www.reuters.com/investigates/special-report/assets/section-leads/wider-image/pope-francis-funeral-pictures/Pope_01.jpg?v=374817280425",
+      "date": "2023-10-02"
+    }
+  ]
+}

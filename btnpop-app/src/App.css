@@ -53,3 +53,14 @@
   --shadow-card: 0 2px 4px rgba(0, 0, 0, 0.1);
   --border-radius: 10px;
 }
+
+body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  touch-action: none;
+}

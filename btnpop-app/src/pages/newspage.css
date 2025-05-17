@@ -137,6 +137,7 @@
   margin-bottom: var(--spacing-sm);
   color: var(--color-text);
   line-height: 1.4;
+  text-overflow: ellipsis;
 }
 
 /* Trending Section */

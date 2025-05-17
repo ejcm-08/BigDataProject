@@ -1,13 +1,13 @@
 .footer {
     background-color: #090A16;
-    min-height: 100vh;
+    min-height: 25rem;
     color: #fff;
     padding: 80px;
     text-align: center;
 }
 
 .footer-content {
-    max-width: 1000px;
+    max-width: var(--site-max-width);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

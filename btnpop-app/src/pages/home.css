@@ -42,8 +42,12 @@
   height: 100vh;
   width: auto;
   object-fit: cover;
-  left: 150px;
+  left: 50px;
   border-radius: 10px;
+}
+
+.hero__background {
+  display: none;
 }
 
 /*News Section */
@@ -195,32 +199,300 @@
   color: var(--color-dark);
 }
 
-/* Responsive Design */
+/* Mobile-First Media Queries */
 @media (max-width: 768px) {
+  /* Hero Section Mobile */
+  .hero {
+    position: relative;
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero__background {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero__background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero__background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(9, 10, 22, 0.8) 0%,
+      rgba(9, 10, 22, 0.95) 100%
+    );
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 2;
+    padding: var(--spacing-md);
+    max-width: 100%;
+    text-align: left;;
+    order: 2;
+  }
+
+  .hero__image {
+    display: none;
+  }
+
   .hero__title {
-    font-size: 6rem;
+    font-size: clamp(4rem, 10vw, 6rem);
+    line-height: 1.2;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero__description {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 90%;
+  }
+
+  /* News Section Mobile */
+  .home_news {
+    padding: var(--spacing-xl) var(--spacing-sm);
+    min-height: auto;
+  }
+
+  .home_news__container {
+    padding: var(--spacing-sm);
+  }
+
+  .home_news__container {
+    padding: var(--spacing-md);
   }
 
   .home_news__preview {
     grid-template-columns: 1fr;
-    gap: var(--spacing-md);
+    gap: var(--spacing-xl);
   }
 
   .home_news__image-wrapper {
-    max-width: 400px;
+    height: 300px;
+    border-radius: 20px;
     margin: 0 auto;
+    width: 100%;
   }
 
   .home_news__content {
-    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--color-white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .home_news__label {
+    font-size: 0.875rem;
+  }
+
+  .home_news__title {
+    font-size: clamp(2.5rem, 6vw, 3rem);
+    line-height: 1.2;
+  }
+
+  .home_news__text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  /* Events Section Mobile Scroll */
+  .events__scroll-container {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    padding: var(--spacing-sm) 0;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 50%;
+    scroll-snap-points-x: repeat(100%);
+  }
+
+  .events__scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .events__grid {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-md);
+    width: auto;
+    min-width: min-content;
+    padding: 0 calc(50% - 140px);
+    width: max-content;
+  }
+
+  .events__card {
+    flex: 0 0 280px;
+    height: 400px;
+    margin: 0;
+    transform: none !important;
+    scroll-snap-align: center;
+    position: relative;
+    background: var(--color-white);
+    border-radius: 15px;
+    overflow: hidden;
+   scroll-snap-align: center; /* Change from 'start' to 'center' */
+    scroll-snap-stop: always; /* Force stopping at snap points */
+  }
+
+  .events__card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+
+  .events__card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--spacing-md);
+    color: white;
+    z-index: 2;
+  }
+
+  /* Add scroll snap */
+  .events__scroll-container {
+    scroll-snap-type: x mandatory;
+    scroll-padding: var(--spacing-md);
+  }
+
+  /* Add scroll indicators */
+  .events::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+    /* Add subtle animations for content */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .home_news__content > * {
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: calc(var(--index) * 0.1s);
+  }
+
+  .home_news__label { --index: 1; }
+  .home_news__title { --index: 2; }
+  .home_news__text { --index: 3; }
+}
+
+/* Add smooth scrolling behavior */
+.events__scroll-container {
+  scroll-behavior: smooth;
+}
+
+/* Add momentum-based scrolling for iOS */
+@supports (-webkit-touch-callout: none) {
+  .events__scroll-container {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Tablet Breakpoint */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero__title {
+    font-size: clamp(6rem, 12vw, 8rem);
+  }
+
+  .home_news__preview {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .events__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+  .events__card {
+    transform: none !important;
   }
 
   .home_news__title::before {
     display: none;
   }
+}
 
-  .events__grid {
-    flex-direction: column;
-    align-items: center;
+/* Add smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add better touch targets for mobile */
+.navbar-item a,
+.events__card,
+button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+
+/* Improve text readability on mobile */
+@media (max-width: 768px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  p {
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+    .hero__title,
+  .home_news__title {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }

@@ -7,6 +7,9 @@ function HomePage() {
   return (
     <>
       <section className="hero">
+        <div className="hero__background">
+          <img src={heroImage} alt="" aria-hidden="true" />
+        </div>
         <div className="hero__content">
           <h1 className='hero__title'>Main Headline</h1>
           <p className='hero__description'>
@@ -44,10 +47,27 @@ function HomePage() {
       <section className="events">
         <h2 className="events__title">UPCOMING EVENTS AND IMPORTANT DATES</h2>
         <h3 className="events__label">STAY TUNED!</h3>
-        <div className="events__grid">
-          <div className="events__card"></div>
-          <div className="events__card"></div>
-          <div className="events__card"></div>
+        <div className="events__scroll-container">
+          <div className="events__grid">
+            <div className="events__card">
+              <div className="events__card-content">
+                <h4>Event 1</h4>
+                <p>Coming Soon</p>
+              </div>
+            </div>
+            <div className="events__card">
+              <div className="events__card-content">
+                <h4>Event 2</h4>
+                <p>Coming Soon</p>
+              </div>
+            </div>
+            <div className="events__card">
+              <div className="events__card-content">
+                <h4>Event 3</h4>
+                <p>Coming Soon</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

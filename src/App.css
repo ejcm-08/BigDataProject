@@ -9,35 +9,46 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-:root{
+:root {
   /* Colors */
-  --light-color: #f8f9fa;
-  --dark-color: #343a40;
-  --white-color: #fff;
-  --black-color: #000;
+  --color-primary: #4169E1;
+  --color-secondary: #C85555;
+  --color-background: #EDEEFA;
+  --color-dark: #090A16;
+  --color-text: #333;
+  --color-text-light: #666;
+  --color-white: #fff;
   --gray-color: #6c757d;
+
+  /* Typography */
+  --font-primary: "Jomhuria", sans-serif;
+  --font-secondary: "Inter", sans-serif;
 
   /* Font Sizes */
   --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;   
+  --font-size-base: 1rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.5rem;
   --font-size-xxl: 2rem;
   --font-size-company: 2.5rem;
-  
+
   /* Font Weights */
   --font-weight-normal: 400;
   --font-weight-bold: 700;
   --font-weight-bolder: 900;
 
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 5rem;
+  --spacing-xxl: 10rem;
 
-  /*Border Radius*/
-  --border-radius-sm: 0.2rem;
-  --border-radius-base: 0.25rem;
-  --border-radius-lg: 0.3rem;
-  --border-radius-xl: 0.5rem;
-  --border-radius-xxl: 0.75rem;
-
-  /*Site max width*/
-  --site-max-width: 1440;
+  /* Layout */
+  --site-max-width: 1200px;
+  
+  /* Effects */
+  --shadow-card: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --border-radius: 10px;
 }

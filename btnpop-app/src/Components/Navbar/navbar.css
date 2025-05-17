@@ -6,36 +6,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 40px;
+  padding: var(--spacing-sm) var(--spacing-lg);
   z-index: 1000;
   background-color: rgba(9, 10, 22, 1)  ;
   backdrop-filter: blur(10px);
 }
 
 .navbar .navbar-company a {
-  font-family: "Jomhuria", sans-serif;
+  font-family: var(--font-primary);
   letter-spacing: 1px;
   font-size: var(--font-size-company);
   color: #fff;
-  padding: 0 40px;
+  padding: 0 var(--spacing-lg);
   text-decoration: none;
 }
 
 .navbar .navbar-list {
   display: flex;
-  padding: 1rem 0;
+  padding: var(--spacing-sm) 0;
   list-style: none;
 }
 
 .navbar .navbar-item a {
   color: #fff;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: var(--font-size-base);
   font-weight: 500;
   transition: color 0.3s ease;
-  padding: 0 40px;
+  padding: 0 var(--spacing-lg);
 }
 
 .navbar .navbar-item a:hover {
-  color: #4169E1;
+  color: var(--color-primary);
 }

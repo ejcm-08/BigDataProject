@@ -95,6 +95,7 @@
 }
 
 .home_news__label {
+  font-family: var(--font-tertiary);
   color: var(--color-primary);
   font-size: 1rem;
   text-transform: uppercase;
@@ -148,7 +149,8 @@
   margin-bottom: var(--spacing-sm);
 }
 
-.events__subtitle {
+.events__label {
+  font-family: var(--font-tertiary);
   color: var(--color-primary);
   font-size: 1rem;
   text-transform: uppercase;

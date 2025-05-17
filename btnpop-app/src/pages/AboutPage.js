@@ -1,11 +1,11 @@
 import React from 'react';
 
-function DonatePage() {
+function AboutPage() {
   return (
     <div className="container">
-      <h1>Donate</h1>
+      <h1>ABout</h1>
     </div>
   );
 }
 
-export default DonatePage;
+export default AboutPage;

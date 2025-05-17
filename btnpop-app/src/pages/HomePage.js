@@ -43,7 +43,7 @@ function HomePage() {
 
       <section className="events">
         <h2 className="events__title">UPCOMING EVENTS AND IMPORTANT DATES</h2>
-        <h3 className="events__subtitle">STAY TUNED!</h3>
+        <h3 className="events__label">STAY TUNED!</h3>
         <div className="events__grid">
           <div className="events__card"></div>
           <div className="events__card"></div>

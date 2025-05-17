@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Space+Grotesk:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=Jomhuria&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
   margin: 0;
@@ -22,6 +23,7 @@
   /* Typography */
   --font-primary: "Jomhuria", sans-serif;
   --font-secondary: "Inter", sans-serif;
+  --font-tertiary: "Inclusive Sans", sans-serif;
 
   /* Font Sizes */
   --font-size-sm: 0.875rem;

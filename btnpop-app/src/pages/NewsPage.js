@@ -1,10 +1,6 @@
-<<<<<<< Updated upstream
-import React from 'react';
-=======
 import React, { useEffect, useRef } from 'react';
 import './newspage.css';
 import rari from '../Content/Images/haha.jpg';
->>>>>>> Stashed changes
 
 function NewsPage() {
   const heroRef = useRef(null);
@@ -35,11 +31,6 @@ function NewsPage() {
   }, []);
 
   return (
-<<<<<<< Updated upstream
-    <div className="container">
-      <h1>News</h1>
-    </div>
-=======
     <>
       <section className="news_hero" ref={heroRef}>
         <div className="news_hero__content">
@@ -97,7 +88,6 @@ function NewsPage() {
         </section>
       </main>
     </>
->>>>>>> Stashed changes
   );
 }
 

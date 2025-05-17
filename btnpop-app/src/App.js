@@ -1,37 +1,25 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import NewsPage from './pages/NewsPage';
 import EventsPage from './pages/EventsPage';
-import AboutPage from './pages/AboutPage';
+import DonatePage from './pages/DonatePage';
 import Navbar from './Components/Navbar/navbar';
-import HomeNavbar from './Components/Navbar/HomeNavbar';
 import Footer from './Components/Footer/footer';
 import './App.css';
-
-function NavigationWrapper() {
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
-
-  return (
-    <>
-      {isHomePage ? <HomeNavbar /> : <Navbar />}
-    </>
-  );
-}
 
 function App() {
   return (
     <Router>
       <div className='app'>
-        <NavigationWrapper />
-        <main>
+        <Navbar />
+        <main className="grid-container">
           <Routes>
+            <Route path="*" element={<Navigate to="/" replace />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/events" element={<EventsPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="/donate" element={<DonatePage />} />
           </Routes>
         </main>
         <Footer />

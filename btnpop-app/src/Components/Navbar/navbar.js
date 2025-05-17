@@ -1,20 +1,27 @@
+import './navbar.css';  
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './navbar.css';
 
 function Navbar() {
     return (
-        <nav className="navbar">
-            <div className="navbar-company"><Link to="/">BTNASSOCIATION</Link></div>
+        <div className="navbar">
+            <div className="navbar-company">BTNASSOCIATION</div>
             <div className="navbar-menu">
                 <ul className="navbar-list">
+<<<<<<< Updated upstream
+                    <li className="navbar-item"><Link to="/">Home</Link></li>
+                    <li className="navbar-item"><Link to="/news">News</Link></li>
+                    <li className="navbar-item"><Link to="/events">Events</Link></li>
+                    <li className="navbar-item"><Link to="/donate">Donate</Link></li>
+=======
                     <li className="navbar-item"><Link to="/">HOME</Link></li>
                     <li className="navbar-item"><Link to="/news">NEWS</Link></li>
                     <li className="navbar-item"><Link to="/events">EVENTS</Link></li>
                     <li className="navbar-item"><Link to="/about">ABOUT</Link></li>
+>>>>>>> Stashed changes
                 </ul>
             </div>
-        </nav>
+        </div>
     );
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import heroImage from '../Content/Images/rari.jpg';
+import newsImage from '../Content/Images/haha.jpg';
 import './home.css';
 
 function HomePage() {

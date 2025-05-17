@@ -1,45 +1,93 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './newspage.css';
+import rari from '../Content/Images/haha.jpg';
 
 function NewsPage() {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      const { width, height, left, top } = hero.getBoundingClientRect();
+      
+      const xPos = (clientX - left) / width;
+      const yPos = (clientY - top) / height;
+      
+      hero.style.setProperty('--mouse-x', xPos);
+      hero.style.setProperty('--mouse-y', yPos);
+    };
+
+    if (hero) {
+      hero.addEventListener('mousemove', handleMouseMove);
+    }
+
+    return () => {
+      if (hero) {
+        hero.removeEventListener('mousemove', handleMouseMove);
+      }
+    };
+  }, []);
+
   return (
-    <div className="news-container">
-      <section className="weekly-highlight">
-        <h2 className="section-title">Weekly Highlight</h2>
-        <div className="highlight-card">
-          <div className="highlight-image">
-            <img src="https://via.placeholder.com/600x400" alt="Weekly Highlight" />
-          </div>
-          <div className="highlight-content">
-            <h3>BTN Association, as represented by Sir Gabriel Jessie Guevarra, participated in the Balanga City's Creative Burst Workshop.</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ornare ipsum sit amet urna feugiat, venenatis venenatis neque viverra.</p>
-            <p>Fusce nulla risus, tristique nec mollis consequat, blandit sed est. Sed vehicula nibh eu nunc tristique, quis feugiat quam hendrerit.</p>
-            <span className="date">Date: January 1 2025</span>
-          </div>
+    <>
+      <section className="news_hero" ref={heroRef}>
+        <div className="news_hero__content">
+          <p className='news_hero__description'>
+            BTN POP is a music and video event which brings together talents in the province of Bataan in a multi-media affair.
+            SONGS submitted by local songwriters interpreted by upcoming home-grown artists, featured in a MUSIC VIDEO directed by local filmmakers, will all lead up to an exciting LIVE EVENT!
+          </p>
         </div>
       </section>
 
-      <section className="latest-news">
-        <h2 className="section-title">Latest News</h2>
-        <div className="news-grid">
-          <div className="news-card">
-            <img src="https://via.placeholder.com/300x200" alt="News 1" />
-            <h4>BTN Association, as represented by Sir Gabriel Jessie Guevarra, participated in the Balanga City's Creative Burst Workshop.</h4>
-            <span className="date">Date: January 1 2025</span>
-          </div>
-          <div className="news-card">
-            <img src="https://via.placeholder.com/300x200" alt="News 2" />
-            <h4>BTN Association, as represented by Sir Gabriel Jessie Guevarra, participated in the Balanga City's Creative Burst Workshop.</h4>
-            <span className="date">Date: January 1 2025</span>
-          </div>
-          <div className="news-card">
-            <img src="https://via.placeholder.com/300x200" alt="News 3" />
-            <h4>BTN Association, as represented by Sir Gabriel Jessie Guevarra, participated in the Balanga City's Creative Burst Workshop.</h4>
-            <span className="date">Date: January 1 2025</span>
-          </div>
+      <main className="news">
+        <div className="news__grid">
+          <section className="feature">
+            <h2 className="feature__title">Weekly Highlight</h2>
+            <article className="feature__card">
+              <img src={rari} alt="Weekly Highlight" className="feature__image" />
+              <div className="feature__content">
+                <h3 className="feature__heading">BTN Association, as represented by Sir Gabriel Jessie Guevarra, participated in the Balanga City's Creative Burst Workshop.</h3>
+                <time className="feature__date">January 1 2025</time>
+              </div>
+            </article>
+          </section>
+
+          <section className="trending">
+            <h2 className="trending__title">Trending News</h2>
+            <div className="trending__list">
+              {[1, 2, 3].map((item) => (
+                <article key={item} className="trending__card">
+                  <div className="trending__image-wrapper">
+                    <img src={rari} alt={`Trending ${item}`} className="trending__image" />
+                  </div>
+                  <div className="trending__content">
+                    <h4 className="trending__heading">BTN Association, as represented by Sir Gabriel Jessie Guevarra, participated in the Balanga City's Creative Burst Workshop.</h4>
+                    <time className="trending__date">January 1 2025</time>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
         </div>
-      </section>
-    </div>
+
+        <section className="latest">
+          <h2 className="latest__title">Latest News</h2>
+          <div className="latest__grid">
+            {[1, 2, 3].map((item) => (
+              <article key={item} className="latest__card">
+                <img src={rari} alt={`News ${item}`} className="latest__image" />
+                <div className="latest__content">
+                  <h4 className="latest__heading">BTN Association, as represented by Sir Gabriel Jessie Guevarra, participated in the Balanga City's Creative Burst Workshop.</h4>
+                  <time className="latest__date">January 1 2025</time>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
 
